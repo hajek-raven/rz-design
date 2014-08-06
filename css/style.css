@@ -8,14 +8,16 @@
 html {
   font-size: 10px;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  perspective: 55em;
 }
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
-  line-height: 1.42857143; 
-  background: url('../img/bg.jpg') no-repeat, #000;
-    background-position: top center;
+  line-height: 1.42857143;
+  background-color: #000;
   color: #fff;
+  min-height: 75em;
+  overflow-x:hidden;
 }
 input,
 button,
@@ -294,13 +296,20 @@ th {
   }
 }
 
+
+body > .bg {
+  position: absolute;
+  width: 90%;
+  left:5%;
+  z-index: -1;
+  top: 0;
+}
 .main-header {
     margin: 0 auto;
 }
 .wrapper {
     margin: 0 auto;
     width: 95%;
-
 }
 .content {
     margin: 0 auto;
@@ -339,10 +348,9 @@ th {
     float: left;
     background: url('../img/logo.png') no-repeat;
     background-size: contain;
-    margin: 1.5em 1.5em 1.5em 46.5%;
+    margin: 1.5em 1.5em 1.5em 43.5%;
     width: 14vw;
     height:15vw;
-    transition: all 400ms cubic-bezier(.16,1.23,.87,1.18);
 }
 .current {
     border-top: 1px solid;
@@ -391,9 +399,11 @@ th {
   width: 4.8em;
 }
 .reasons {
-    margin: 2em auto;
+    margin: 0 auto 2em;
     width: 70%;
     text-align: center;
+    text-shadow: 10px 10px 10px #000;
+    -webkit-transform-style: preserve-3d;
 }
 .reasons ul > li {
     list-style: none;
@@ -439,11 +449,46 @@ hr.heading {
     display: inline-block;
 }
 .services {
-    margin: 1em auto;
+    margin: 10em auto;
     width: 80%;
 }
-
-
+.projects {
+  margin: 5em auto;
+}
+.projects img {
+  opacity: 0.6;
+  transition: all 0.4s cubic-bezier(.16,1.23,.87,1.18);
+}
+.projects img:hover {
+  opacity: 1;
+}
+.main-footer {
+  text-align: center;
+  font-size:1.1em;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  margin-bottom: 1em;
+  color: #333;
+  text-shadow: 0 0 3px #aaa;
+  transition: all 0.3s;
+}
+.main-footer:hover {
+  text-shadow: none;
+  color: #aaa;
+}
+@media (min-width: 768px) {
+  .main-footer {
+    font-size: 1.4em;
+  }
+}
+.main-footer a {
+  color: #fff;
+  transition: all 0.3s;
+}
+.main-footer a:hover {
+  color: #333;
+  text-shadow: 0 0 3px #aaa;
+}
 
 html {
   font-family: sans-serif;
